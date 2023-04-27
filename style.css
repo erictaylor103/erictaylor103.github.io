@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+}
+
+.logo img{
+    width: 10%;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color: rgb(209, 209, 209);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+.burger{
+    display: none;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(209, 209, 209);
+    margin: 5px;
+    transition: all 0.3s ease-in;
+
+}
+
+.homepage-title-main-wrapper{
+    text-align: center;
+}
+
+.homepage-title-main-wrapper h1{
+    font-size: 50px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.team-cards-main-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team-card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18%;
+    text-align: center;
+    height: 100%;
+    background-color: #5d4954;
+    border-radius: 5%;
+    color: rgb(209, 209, 209);
+}
+.team-card-container img{
+    width: 50%;
+}
+.team-card-container h2{
+    margin-bottom: 20px;
+}
+.team-card-container p{
+    padding: 18px;
+}
+.description-text{
+    font-size: 20px;
+}
+.conoce-mas-page-image-main-wrapper img,
+.arte-y-cultura-image-main-wrapper img,
+.economia-image-main-wrapper img{
+    width: 100%;
+}
+.video-main-wrapper{
+    text-align: center;
+    margin-top: 50px;
+}
+.video-main-wrapper video{
+    width: 80%;
+    height: 80%;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5d4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translate(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 1;
+        text-align: center;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+    .nav-active{
+        transform: translate(0%);
+
+    }
+    .team-card-container{
+        width: 93%;
+        margin-bottom: 50px;
+    }
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{    
+    transform: rotate(45deg) translate(-5px,-6px);
+}
